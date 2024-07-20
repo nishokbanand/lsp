@@ -33,6 +33,7 @@ type ServerCapabilities struct {
 	TextDocumentSync   int  `json:"textDocumentSync"`
 	HoverProvider      bool `json:"hoverProvider"`
 	DefinitionProvider bool `json:"definitionProvider"`
+	CodeActionProvider bool `json:"codeActionProvider"`
 }
 
 func NewInitializeResponse(id int) InitializeResponse {
@@ -42,6 +43,7 @@ func NewInitializeResponse(id int) InitializeResponse {
 			TextDocumentSync:   1,
 			HoverProvider:      true,
 			DefinitionProvider: true,
+			CodeActionProvider: true,
 		}, ServerInfo: ServerInfo{Name: "test_lsp", Version: "alpha"}},
 	}
 }

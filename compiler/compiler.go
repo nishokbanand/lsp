@@ -3,6 +3,7 @@ package compiler
 import (
 	"fmt"
 	"lsp/lsp"
+	"strings"
 )
 
 type State struct {
@@ -48,4 +49,59 @@ func (s *State) DefintionResponse(id int, uri string, position lsp.Position) lsp
 			},
 		},
 	}
+}
+
+func (s *State) CodeActionResponse(id int, uri string) lsp.CodeActionResponse {
+	text := s.Documents[uri]
+	codeActions := []lsp.CodeAction{}
+	for row, line := range strings.Split(text, "\n") {
+		index := strings.Index(line, "VS Code")
+		if index >= 0 {
+			replaceChange := map[string][]lsp.TextEdit{}
+			replaceChange[uri] = []lsp.TextEdit{
+				{
+					Range:   LineRange(row, index, index+len("VS Code")),
+					NewText: "Vs C*ode",
+				},
+			}
+			codeActions = append(codeActions, lsp.CodeAction{
+				Title: "Replace VS Code with VS C*ode",
+				Edit: &lsp.WorkSpaceEdit{
+					Changes: replaceChange,
+				},
+			})
+
+			updateChange := map[string][]lsp.TextEdit{}
+			updateChange[uri] = []lsp.TextEdit{
+				{
+					Range:   LineRange(row, index, index+len("VS Code")),
+					NewText: "Neovim",
+				},
+			}
+			codeActions = append(codeActions, lsp.CodeAction{
+				Title: "Update with cool editor",
+				Edit: &lsp.WorkSpaceEdit{
+					Changes: updateChange,
+				},
+			})
+		}
+	}
+	return lsp.CodeActionResponse{
+		Response: lsp.Response{RPC: "jsonrpc", ID: &id},
+		Result:   codeActions,
+	}
+}
+
+func LineRange(line int, start int, end int) lsp.Range {
+	return lsp.Range{
+		Start: lsp.Position{
+			Line:      line,
+			Character: start,
+		},
+		End: lsp.Position{
+			Line:      line,
+			Character: end,
+		},
+	}
+
 }

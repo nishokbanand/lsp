@@ -51,3 +51,11 @@ type Location struct {
 	URI   string `json:"uri"`
 	Range Range  `json:"range"`
 }
+type WorkSpaceEdit struct {
+	Changes map[string][]TextEdit `json:"changes"`
+}
+
+type TextEdit struct {
+	Range   Range  `json:"range"`
+	NewText string `json:"newText"`
+}

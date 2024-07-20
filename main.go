@@ -29,8 +29,7 @@ func main() {
 	}
 }
 
-func writeResponse(write io.Writer, msg any) {
-	writer := os.Stdout
+func writeResponse(writer io.Writer, msg any) {
 	reply := rpc.Encode(msg)
 	writer.Write([]byte(reply))
 }
@@ -55,7 +54,17 @@ func handlemsg(logger *log.Logger, writer io.Writer, state compiler.State, metho
 			return
 		}
 		logger.Printf("URI:%s , Content : %s", request.Params.TextDocument.URI, request.Params.TextDocument.Text)
-		state.OpenDocument(request.Params.TextDocument.URI, request.Params.TextDocument.Text)
+		diagnostics := state.OpenDocument(request.Params.TextDocument.URI, request.Params.TextDocument.Text)
+		writeResponse(writer, lsp.PublishDiagnosticsNotification{
+			Notification: lsp.Notification{
+				RPC:    "jsonrpc",
+				Method: "textDocument/publishDiagnostics",
+			},
+			Params: lsp.PublishDiagnosticParams{
+				URI:         request.Params.TextDocument.URI,
+				Diagnostics: diagnostics,
+			},
+		})
 	case "textDocument/didChange":
 		var request lsp.DidChangeTextDocumentNotification
 		if err := json.Unmarshal(content, &request); err != nil {
@@ -64,7 +73,14 @@ func handlemsg(logger *log.Logger, writer io.Writer, state compiler.State, metho
 		}
 		logger.Printf("URI:%s ", request.Params.TextDocument.URI)
 		for _, changes := range request.Params.ContentChanges {
-			state.UpdateDocument(request.Params.TextDocument.URI, changes.Text)
+			diagnostics := state.UpdateDocument(request.Params.TextDocument.URI, changes.Text)
+			writeResponse(writer, lsp.PublishDiagnosticsNotification{
+				Notification: lsp.Notification{RPC: "2.0", Method: "textDocument/publishDiagnostics"},
+				Params: lsp.PublishDiagnosticParams{
+					URI:         request.Params.TextDocument.URI,
+					Diagnostics: diagnostics,
+				},
+			})
 		}
 	case "textDocument/hover":
 		var request lsp.HoverRequest

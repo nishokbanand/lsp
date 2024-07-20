@@ -1,49 +1,15 @@
-[lsp]2024/07/21 00:30:36 main.go:16: Hey I have started
-[lsp]2024/07/21 00:30:36 main.go:39: Got the msg with Method initialize
-[lsp]2024/07/21 00:30:36 main.go:47: ClientName:Neovim , Version : 0.10.0-dev
-[lsp]2024/07/21 00:30:36 main.go:50: Sent the reply
-[lsp]2024/07/21 00:30:36 main.go:39: Got the msg with Method initialized
-[lsp]2024/07/21 00:30:36 main.go:39: Got the msg with Method textDocument/didOpen
-[lsp]2024/07/21 00:30:36 main.go:57: URI:file:///Users/nb18/foobar/summa/lsp/readme.md , Content : # `educationalsp`
+[lsp]2024/07/21 01:10:57 main.go:16: Hey I have started
+[lsp]2024/07/21 01:10:57 main.go:38: Got the msg with Method initialize
+[lsp]2024/07/21 01:10:57 main.go:46: ClientName:Neovim , Version : 0.10.0-dev
+[lsp]2024/07/21 01:10:57 main.go:49: Sent the reply
+[lsp]2024/07/21 01:10:57 main.go:38: Got the msg with Method initialized
+[lsp]2024/07/21 01:10:57 main.go:38: Got the msg with Method textDocument/didOpen
+[lsp]2024/07/21 01:10:57 main.go:56: URI:file:///Users/nb18/foobar/summa/lsp/readme.md , Content : # `educationalsp`
 
 hellllllllllllllllllllllllll
 something
 Neovim
-[lsp]2024/07/21 00:30:37 main.go:39: Got the msg with Method textDocument/hover
-[lsp]2024/07/21 00:30:40 main.go:39: Got the msg with Method textDocument/definition
-[lsp]2024/07/21 00:30:43 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:43 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:46 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:46 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:46 main.go:39: Got the msg with Method textDocument/completion
-[lsp]2024/07/21 00:30:48 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:48 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:50 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:50 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:50 main.go:39: Got the msg with Method textDocument/completion
-[lsp]2024/07/21 00:30:50 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:50 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:50 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:50 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:51 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:51 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:51 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:51 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:51 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:51 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:51 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:51 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:51 main.go:39: Got the msg with Method textDocument/completion
-[lsp]2024/07/21 00:30:53 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:53 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:54 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:54 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:54 main.go:39: Got the msg with Method textDocument/completion
-[lsp]2024/07/21 00:30:57 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:57 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:57 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:57 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:58 main.go:39: Got the msg with Method textDocument/didChange
-[lsp]2024/07/21 00:30:58 main.go:65: URI:file:///Users/nb18/foobar/summa/lsp/readme.md 
-[lsp]2024/07/21 00:30:59 main.go:39: Got the msg with Method textDocument/didSave
-[lsp]2024/07/21 00:31:06 main.go:39: Got the msg with Method shutdown
+VS Code
+VS Code
+VS Code
+[lsp]2024/07/21 01:11:00 main.go:38: Got the msg with Method shutdown

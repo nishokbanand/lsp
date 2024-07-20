@@ -92,6 +92,20 @@ func (s *State) CodeActionResponse(id int, uri string) lsp.CodeActionResponse {
 	}
 }
 
+func (s *State) CodeCompletionResponse(id int, uri string) lsp.CodeCompletionResponse {
+	items := []lsp.CompletionItem{}
+	items = append(items, lsp.CompletionItem{
+		Label:         "fmt.Printf",
+		Detail:        "Prints the statement to Stdout",
+		Documentation: "Documentation",
+	},
+	)
+	return lsp.CodeCompletionResponse{
+		Response: lsp.Response{RPC: "jsonrpc", ID: &id},
+		Result:   items,
+	}
+}
+
 func LineRange(line int, start int, end int) lsp.Range {
 	return lsp.Range{
 		Start: lsp.Position{

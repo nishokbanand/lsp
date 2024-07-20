@@ -69,7 +69,7 @@ func handlemsg(logger *log.Logger, writer io.Writer, state compiler.State, metho
 	case "textDocument/hover":
 		var request lsp.HoverRequest
 		if err := json.Unmarshal(content, &request); err != nil {
-			logger.Println("textDocument/didchange err", err)
+			logger.Println("textDocument/hover err", err)
 			return
 		}
 		//write Response
@@ -78,7 +78,7 @@ func handlemsg(logger *log.Logger, writer io.Writer, state compiler.State, metho
 	case "textDocument/definition":
 		var request lsp.DefintionRequest
 		if err := json.Unmarshal(content, &request); err != nil {
-			logger.Println("textDocument/didchange err", err)
+			logger.Println("textDocument/definition err", err)
 			return
 		}
 		//write Response
@@ -87,11 +87,20 @@ func handlemsg(logger *log.Logger, writer io.Writer, state compiler.State, metho
 	case "textDocument/codeAction":
 		var request lsp.CodeActionRequest
 		if err := json.Unmarshal(content, &request); err != nil {
-			logger.Println("textDocument/didchange err", err)
+			logger.Println("textDocument/codeAction err", err)
 			return
 		}
 		//write Response
 		response := state.CodeActionResponse(request.ID, request.Params.TextDocument.URI)
+		writeResponse(writer, response)
+	case "textDocument/completion":
+		var request lsp.CodeCompletionRequest
+		if err := json.Unmarshal(content, &request); err != nil {
+			logger.Println("textDocument/completion err", err)
+			return
+		}
+		//write Response
+		response := state.CodeCompletionResponse(request.ID, request.Params.TextDocument.URI)
 		writeResponse(writer, response)
 	}
 }

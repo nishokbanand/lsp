@@ -1,0 +1,6 @@
+[lsp]2024/07/20 12:06:58 main.go:14: Hey I have started
+[lsp]2024/07/20 12:06:58 main.go:29: Got the msg with Method initialize
+[lsp]2024/07/20 12:06:58 main.go:36: ClientName:Neovim , Version : 0.10.0-dev
+[lsp]2024/07/20 12:06:58 main.go:41: Sent the reply
+[lsp]2024/07/20 12:06:58 main.go:29: Got the msg with Method initialized
+[lsp]2024/07/20 12:07:08 main.go:29: Got the msg with Method shutdown

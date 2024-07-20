@@ -1,6 +1,15 @@
-[lsp]2024/07/20 12:06:58 main.go:14: Hey I have started
-[lsp]2024/07/20 12:06:58 main.go:29: Got the msg with Method initialize
-[lsp]2024/07/20 12:06:58 main.go:36: ClientName:Neovim , Version : 0.10.0-dev
-[lsp]2024/07/20 12:06:58 main.go:41: Sent the reply
-[lsp]2024/07/20 12:06:58 main.go:29: Got the msg with Method initialized
-[lsp]2024/07/20 12:07:08 main.go:29: Got the msg with Method shutdown
+[lsp]2024/07/20 15:49:12 main.go:16: Hey I have started
+[lsp]2024/07/20 15:49:12 main.go:39: Got the msg with Method initialize
+[lsp]2024/07/20 15:49:12 main.go:47: ClientName:Neovim , Version : 0.10.0-dev
+[lsp]2024/07/20 15:49:12 main.go:50: Sent the reply
+[lsp]2024/07/20 15:49:12 main.go:39: Got the msg with Method initialized
+[lsp]2024/07/20 15:49:12 main.go:39: Got the msg with Method textDocument/didOpen
+[lsp]2024/07/20 15:49:12 main.go:57: URI:file:///Users/nb18/foobar/summa/lsp/readme.md , Content : # `educationalsp`
+
+hellllllllllllllllllllllllll
+something
+[lsp]2024/07/20 15:49:14 main.go:39: Got the msg with Method textDocument/definition
+[lsp]2024/07/20 15:49:15 main.go:39: Got the msg with Method textDocument/definition
+[lsp]2024/07/20 15:49:16 main.go:39: Got the msg with Method textDocument/didSave
+[lsp]2024/07/20 15:49:17 main.go:39: Got the msg with Method textDocument/didSave
+[lsp]2024/07/20 15:49:17 main.go:39: Got the msg with Method shutdown
